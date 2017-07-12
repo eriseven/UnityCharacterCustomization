@@ -18,7 +18,7 @@ class UpdateCharacterElementDatabase
         // that contains its assets, we go through all assetbundles
         // to match them to the materials we find.
         string[] assetbundles = Directory.GetFiles(CreateAssetbundles.AssetbundlePath);
-        string[] materials = Directory.GetFiles("Assets/characters", "*.mat", SearchOption.AllDirectories);
+        string[] materials = Directory.GetFiles("Assets/CharacterCustomization/characters", "*.mat", SearchOption.AllDirectories);
         foreach (string material in materials)
         {
             foreach (string bundle in assetbundles)
@@ -42,12 +42,19 @@ class UpdateCharacterElementDatabase
 
         // Save the ScriptableObject and load the resulting asset so it can 
         // be added to an assetbundle.
-        string p = "Assets/CharacterElementDatabase.asset";
+        string p = "Assets/characterelementdatabase.asset";
         AssetDatabase.CreateAsset(t, p);
 		Object o = AssetDatabase.LoadAssetAtPath(p, typeof(CharacterElementHolder));
 
+        AssetBundleBuild[] buildInfo = new AssetBundleBuild[1];
+        buildInfo[0].assetBundleName = "characterelementdatabase.assetbundle";
+        buildInfo[0].assetNames = new string[1];
+        buildInfo[0].assetNames[0] = p;
+
+        BuildPipeline.BuildAssetBundles(CreateAssetbundles.AssetbundlePath, buildInfo, BuildAssetBundleOptions.None, BuildTarget.StandaloneWindows);
+
         // Build the CharacterElementDatabase assetbundle.
-		BuildPipeline.BuildAssetBundle(o, null, CreateAssetbundles.AssetbundlePath + "CharacterElementDatabase.assetbundle");
+        //BuildPipeline.BuildAssetBundle(o, null, CreateAssetbundles.AssetbundlePath + "CharacterElementDatabase.assetbundle");
 
         // Delete the ScriptableObject.
         AssetDatabase.DeleteAsset(p);

@@ -1,0 +1,36 @@
+ManifestFileVersion: 0
+CRC: 2756256309
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: e8f4dc0671c8bf6adf2c7475a3547296
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: caa79d9405456699f2f4bf85b54c7403
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: 3f5284882e63c9c419de64778fa2a245, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 137
+  Script: {instanceID: 0}
+Assets:
+- Assets/rendererobject.prefab
+- Assets/CharacterCustomization/characters/Male/Per Texture Materials/male_hair-1_blond.mat
+- Assets/CharacterCustomization/characters/Male/Per Texture Materials/male_hair-1_brown.mat
+- Assets/CharacterCustomization/characters/Male/Per Texture Materials/male_hair-1_orange.mat
+- Assets/bonenames.asset
+Dependencies: []

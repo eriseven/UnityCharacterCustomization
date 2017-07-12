@@ -28,8 +28,8 @@ go.transform.localPosition = Vector3.zero;
 go.transform.localRotation = Quaternion.identity;
 
 // Play and loop the specified animation.
-go.animation.Play(anim);
-go.animation[anim].wrapMode = WrapMode.Loop;
+go.GetComponent.<Animation>().Play(anim);
+//go.animation[anim].wrapMode = WrapMode.Loop;
 
 // Stop emitting particles, as the character now exists.
 GetComponentInChildren(ParticleEmitter).emit = false;

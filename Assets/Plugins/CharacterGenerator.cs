@@ -176,12 +176,13 @@ public class CharacterGenerator
 		get
 		{
 			if (database == null)
-				database = new WWW(AssetbundleBaseURL + "CharacterElementDatabase.assetbundle");
+				database = new WWW(AssetbundleBaseURL + "characterelementdatabase.assetbundle");
 
 			if (sortedElements != null) return true;
 			if (!database.isDone) return false;
 
-			CharacterElementHolder ceh = (CharacterElementHolder) database.assetBundle.mainAsset;
+            CharacterElementHolder ceh = database.assetBundle.LoadAsset<CharacterElementHolder>(database.assetBundle.GetAllAssetNames()[0]);
+			//CharacterElementHolder ceh = (CharacterElementHolder) database.assetBundle.mainAsset;
 
 			sortedElements = new Dictionary<string, Dictionary<string, List<CharacterElement>>>();
 			foreach (CharacterElement element in ceh.content)
@@ -325,7 +326,7 @@ public class CharacterGenerator
             if (Application.platform == RuntimePlatform.WindowsWebPlayer || Application.platform == RuntimePlatform.OSXWebPlayer)
                 return Application.dataPath+"/assetbundles/";
             else
-                return "file://" + Application.dataPath + "/Assets/assetbundles/";
+                return "file://" + Application.streamingAssetsPath + "/assetbundles/";
         }
     }
 

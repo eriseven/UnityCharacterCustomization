@@ -54,7 +54,16 @@ class CreateAssetbundles
             characterClone.AddComponent<SkinnedMeshRenderer>();
             Object characterBasePrefab = GetPrefab(characterClone, "characterbase");
             string path = AssetbundlePath + name + "_characterbase.assetbundle";
-            BuildPipeline.BuildAssetBundle(characterBasePrefab, null, path, BuildAssetBundleOptions.CollectDependencies);
+
+
+            AssetBundleBuild[] buildInfo = new AssetBundleBuild[1];
+            buildInfo[0].assetBundleName = name + "_characterbase.assetbundle";
+            buildInfo[0].assetNames = new string[1];
+            buildInfo[0].assetNames[0] = AssetDatabase.GetAssetPath(characterBasePrefab);
+
+            BuildPipeline.BuildAssetBundles(CreateAssetbundles.AssetbundlePath, buildInfo, BuildAssetBundleOptions.None, BuildTarget.StandaloneWindows);
+
+            //BuildPipeline.BuildAssetBundle(characterBasePrefab, null, path, BuildAssetBundleOptions.CollectDependencies);
             AssetDatabase.DeleteAsset(AssetDatabase.GetAssetPath(characterBasePrefab));
 
             // Collect materials.
@@ -97,7 +106,19 @@ class CreateAssetbundles
                 // Save the assetbundle.
                 string bundleName = name + "_" + smr.name.ToLower();
                 path = AssetbundlePath + bundleName + ".assetbundle";
-                BuildPipeline.BuildAssetBundle(null, toinclude.ToArray(), path, BuildAssetBundleOptions.CollectDependencies);
+
+                buildInfo = new AssetBundleBuild[1];
+                buildInfo[0].assetBundleName = bundleName + ".assetbundle";
+                buildInfo[0].assetNames = new string[toinclude.Count];
+                for (int i = 0; i < toinclude.Count; i++)
+                {
+                    buildInfo[0].assetNames[i] = AssetDatabase.GetAssetPath(toinclude[i]);
+                }
+
+                BuildPipeline.BuildAssetBundles(CreateAssetbundles.AssetbundlePath, buildInfo, BuildAssetBundleOptions.CollectDependencies, BuildTarget.StandaloneWindows);
+
+
+                //BuildPipeline.BuildAssetBundle(null, toinclude.ToArray(), path, BuildAssetBundleOptions.CollectDependencies);
                 Debug.Log("Saved " + bundleName + " with " + (toinclude.Count - 2) + " materials");
 
                 // Delete temp assets.
@@ -123,6 +144,7 @@ class CreateAssetbundles
 
     public static string AssetbundlePath
     {
-        get { return "Assets" + Path.DirectorySeparatorChar + "assetbundles" + Path.DirectorySeparatorChar; }
+        //get { return "Assets" + Path.DirectorySeparatorChar + "assetbundles" + Path.DirectorySeparatorChar; }
+        get { return Application.streamingAssetsPath + Path.DirectorySeparatorChar + "assetbundles" + Path.DirectorySeparatorChar; }
     }
 }

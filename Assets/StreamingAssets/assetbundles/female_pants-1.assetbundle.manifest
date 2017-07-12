@@ -1,0 +1,36 @@
+ManifestFileVersion: 0
+CRC: 1825279094
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: d5c936b215f071651dd85499978ff2eb
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: caa79d9405456699f2f4bf85b54c7403
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: 3f5284882e63c9c419de64778fa2a245, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 137
+  Script: {instanceID: 0}
+Assets:
+- Assets/rendererobject.prefab
+- Assets/CharacterCustomization/characters/Female/Per Texture Materials/female_pants-1_dark.mat
+- Assets/CharacterCustomization/characters/Female/Per Texture Materials/female_pants-1_green.mat
+- Assets/bonenames.asset
+- Assets/CharacterCustomization/characters/Female/Per Texture Materials/female_pants-1_blue.mat
+Dependencies: []

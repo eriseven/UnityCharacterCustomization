@@ -1,0 +1,18 @@
+ManifestFileVersion: 0
+CRC: 2886783701
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: c416a842be1acd2299696ab6340d4391
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: cab13299ddd6223ef82b0d8257541978
+HashAppended: 0
+ClassTypes:
+- Class: 114
+  Script: {fileID: 11500000, guid: 01c436b0eee8bd047b510d9ad4513ce9, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+Assets:
+- Assets/characterelementdatabase.asset
+Dependencies: []

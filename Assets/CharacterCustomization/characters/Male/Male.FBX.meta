@@ -1,7 +1,5 @@
 fileFormatVersion: 2
-guid: 5b28f5d8a6c327a4b9d06fb6541797dc
-timeCreated: 1499839722
-licenseType: Pro
+guid: c6b638184c831014eaaf1669e8987a11
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
@@ -139,18 +137,29 @@ ModelImporter:
     400128: shoes-2
     400130: top-1
     400132: top-2
-    4300000: eyes
-    4300002: face-1
-    4300004: hair-1
-    4300006: top-2
-    4300008: pants-2
-    4300010: top-1
-    4300012: pants-1
-    4300014: shoes-2
-    4300016: hair-2
-    4300018: shoes-1
-    4300020: face-2
-    9500000: //RootNode
+    4300000: male_eyes
+    4300002: male_face-1
+    4300004: male_hair-1
+    4300006: male_top-2
+    4300008: male_pants-2
+    4300010: male_top-1
+    4300012: male_pants-1
+    4300014: male_shoes-2
+    4300016: male_hair-2
+    4300018: male_shoes-1
+    4300020: male_face-2
+    4300022: eyes
+    4300024: face-1
+    4300026: hair-1
+    4300028: top-2
+    4300030: pants-2
+    4300032: top-1
+    4300034: pants-1
+    4300036: shoes-2
+    4300038: hair-2
+    4300040: shoes-1
+    4300042: face-2
+    11100000: //RootNode
     13700000: eyes
     13700002: face-1
     13700004: face-2
@@ -163,7 +172,7 @@ ModelImporter:
     13700018: top-1
     13700020: top-2
   materials:
-    importMaterials: 1
+    importMaterials: 0
     materialName: 0
     materialSearch: 1
   animations:
@@ -178,7 +187,7 @@ ModelImporter:
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
-    animationCompression: 1
+    animationCompression: 0
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
@@ -202,11 +211,11 @@ ModelImporter:
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
-    useFileScale: 1
+    useFileScale: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
-    tangentImportMode: 3
+    tangentImportMode: 1
   importAnimation: 1
   copyAvatar: 0
   humanDescription:
@@ -226,7 +235,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 1
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

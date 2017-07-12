@@ -1,0 +1,36 @@
+ManifestFileVersion: 0
+CRC: 3607650264
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: e8f655628736ea1b3bdc06071db2f892
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: caa79d9405456699f2f4bf85b54c7403
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: 3f5284882e63c9c419de64778fa2a245, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 137
+  Script: {instanceID: 0}
+Assets:
+- Assets/rendererobject.prefab
+- Assets/CharacterCustomization/characters/Female/Per Texture Materials/female_hair-2_cyan.mat
+- Assets/bonenames.asset
+- Assets/CharacterCustomization/characters/Female/Per Texture Materials/female_hair-2_pink.mat
+- Assets/CharacterCustomization/characters/Female/Per Texture Materials/female_hair-2_dark.mat
+Dependencies: []
