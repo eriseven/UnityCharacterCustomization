@@ -13,6 +13,7 @@ public enum BlendMode {
 /// A Utility class for performing various image based rendering tasks.
 [AddComponentMenu("")]
 public class ImageEffects {
+    static public Shader[] shaders;
 	static Material[] m_BlitMaterials = {null, null, null, null, null, null};
 	
 	static public Material GetBlitMaterial (BlendMode mode) {
@@ -20,7 +21,12 @@ public class ImageEffects {
 		
 		if (m_BlitMaterials[index] != null)
 			return m_BlitMaterials[index];
-			
+
+        for (int i = 0; i < m_BlitMaterials.Length; i++)
+        {
+            m_BlitMaterials[i] = new Material(shaders[i]);
+        }
+/*			
 		// Blit Copy Material
 		m_BlitMaterials[0] = new Material (
 			"Shader \"BlitCopy\" {\n"	+
@@ -80,6 +86,7 @@ public class ImageEffects {
 			"	}}\n"	 +
 			"Fallback Off }"
 		);
+*/
 		for( int i = 0; i < m_BlitMaterials.Length; ++i ) {
 			m_BlitMaterials[i].hideFlags = HideFlags.HideAndDontSave;
 			m_BlitMaterials[i].shader.hideFlags = HideFlags.HideAndDontSave;

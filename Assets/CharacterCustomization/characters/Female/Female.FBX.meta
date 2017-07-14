@@ -181,6 +181,7 @@ ModelImporter:
     4300046: hair-1
     4300048: face-2
     4300050: eyes
+    9500000: //RootNode
     11100000: //RootNode
     13700000: eyes
     13700002: face-1
@@ -254,10 +255,10 @@ ModelImporter:
     rootMotionBoneName: 
     rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
-    hasExtraRoot: 0
+    hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 1
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

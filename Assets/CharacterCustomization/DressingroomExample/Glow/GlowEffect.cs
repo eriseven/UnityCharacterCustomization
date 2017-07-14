@@ -47,12 +47,13 @@ public class GlowEffect : MonoBehaviour
 	}
 	Fallback off
 }";
-	
-	static Material m_CompositeMaterial = null;
-	protected static Material compositeMaterial {
+
+    public Shader compositeShader;
+	Material m_CompositeMaterial = null;
+	protected Material compositeMaterial {
 		get {
 			if (m_CompositeMaterial == null) {
-				m_CompositeMaterial = new Material (compositeMatString);
+				m_CompositeMaterial = new Material (compositeShader);
 				m_CompositeMaterial.hideFlags = HideFlags.HideAndDontSave;
 				m_CompositeMaterial.shader.hideFlags = HideFlags.HideAndDontSave;
 			}
@@ -86,12 +87,12 @@ public class GlowEffect : MonoBehaviour
 	}
 	Fallback off
 }";
-
-	static Material m_BlurMaterial = null;
-	protected static Material blurMaterial {
+    public Shader blurShader;
+	Material m_BlurMaterial = null;
+	protected Material blurMaterial {
 		get {
 			if (m_BlurMaterial == null) {
-				m_BlurMaterial = new Material( blurMatString );
+				m_BlurMaterial = new Material( blurShader );
 				m_BlurMaterial.hideFlags = HideFlags.HideAndDontSave;
 				m_BlurMaterial.shader.hideFlags = HideFlags.HideAndDontSave;
 			}
@@ -123,11 +124,11 @@ public class GlowEffect : MonoBehaviour
 	protected void OnDisable()
 	{
 		if( m_CompositeMaterial ) {
-			DestroyImmediate( m_CompositeMaterial.shader );
+			//DestroyImmediate( m_CompositeMaterial.shader );
 			DestroyImmediate( m_CompositeMaterial );
 		}
 		if( m_BlurMaterial ) {
-			DestroyImmediate( m_BlurMaterial.shader );
+			//DestroyImmediate( m_BlurMaterial.shader );
 			DestroyImmediate( m_BlurMaterial );
 		}
 		if( m_DownsampleMaterial )
@@ -179,6 +180,8 @@ public class GlowEffect : MonoBehaviour
 		downsampleMaterial.color = new Color( glowTint.r, glowTint.g, glowTint.b, glowTint.a/4.0f );
 		Graphics.Blit (source, dest, downsampleMaterial);
 	}
+
+    public Shader[] blitShaders = new Shader[6];
 	
 	// Called by the camera to apply the image effect
 	void OnRenderImage (RenderTexture source, RenderTexture destination)
@@ -207,7 +210,13 @@ public class GlowEffect : MonoBehaviour
 				FourTapCone (buffer2, buffer, i);
 			oddEven = !oddEven;
 		}
-		ImageEffects.Blit(source,destination);
+
+        if (ImageEffects.shaders == null)
+        {
+            ImageEffects.shaders = blitShaders;
+        }
+
+		ImageEffects.Blit(source,destination,BlendMode.Blend);
 				
 		if( oddEven )
 			BlitGlow(buffer, destination);
