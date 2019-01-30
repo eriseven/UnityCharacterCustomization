@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: 11e924b1c9a8b0949ac9b4f0739366bd
 ModelImporter:
-  serializedVersion: 19
+  serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
     100002: Female_CheekLeft
@@ -68,6 +68,17 @@ ModelImporter:
     100124: Female_RightUpLeg
     100126: Female_Spine
     100128: Female_Spine1
+    100130: Female_eyes
+    100132: Female_face1
+    100134: Female_face2
+    100136: Female_hair1
+    100138: Female_hair2
+    100140: Female_pants1
+    100142: Female_pants2
+    100144: Female_shoes1
+    100146: Female_shoes2
+    100148: Female_top1
+    100150: Female_top2
     400000: //RootNode
     400002: Female_CheekLeft
     400004: Female_CheekRight
@@ -133,6 +144,17 @@ ModelImporter:
     400124: Female_RightUpLeg
     400126: Female_Spine
     400128: Female_Spine1
+    400130: Female_eyes
+    400132: Female_face1
+    400134: Female_face2
+    400136: Female_hair1
+    400138: Female_hair2
+    400140: Female_pants1
+    400142: Female_pants2
+    400144: Female_shoes1
+    400146: Female_shoes2
+    400148: Female_top1
+    400150: Female_top2
     4300000: Female_pants1
     4300002: Female_top1
     4300004: Female_shoes1
@@ -146,10 +168,23 @@ ModelImporter:
     4300020: Female_eyes
     7400000: item_pants
     11100000: //RootNode
+    13700000: Female_eyes
+    13700002: Female_face1
+    13700004: Female_face2
+    13700006: Female_hair1
+    13700008: Female_hair2
+    13700010: Female_pants1
+    13700012: Female_pants2
+    13700014: Female_shoes1
+    13700016: Female_shoes2
+    13700018: Female_top1
+    13700020: Female_top2
+  externalObjects: {}
   materials:
     importMaterials: 0
     materialName: 0
     materialSearch: 1
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -162,12 +197,15 @@ ModelImporter:
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
     animationCompression: 0
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
+    extraUserProperties: []
     clipAnimations: []
     isReadable: 1
   meshes:
@@ -175,22 +213,34 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 0
     importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
     optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 1
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 0
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 1
+    normalCalculationMode: 0
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
   importAnimation: 1
   copyAvatar: 0
   humanDescription:
@@ -205,7 +255,6 @@ ModelImporter:
     legStretch: 0.05
     feetSpacing: 0
     rootMotionBoneName: 
-    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1

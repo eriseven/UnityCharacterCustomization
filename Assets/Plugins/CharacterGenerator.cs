@@ -323,9 +323,11 @@ public class CharacterGenerator
     {
         get
         {
+#if !UNITY_5_4_OR_NEWER
             if (Application.platform == RuntimePlatform.WindowsWebPlayer || Application.platform == RuntimePlatform.OSXWebPlayer)
                 return Application.dataPath+"/assetbundles/";
             else
+#endif
                 return "file://" + Application.streamingAssetsPath + "/assetbundles/";
         }
     }
